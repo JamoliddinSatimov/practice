@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const { Pool } = require('pg')
 const app = express()
+const PORT = process.env.PORT || 8000
 
 const pool = new Pool({
     connectionString : process.env.CONNECTION_STRING
@@ -44,4 +45,4 @@ app.post("/", async (req,res)=>{
 
 
 
-app.listen(9000, console.log(9000))
+app.listen(PORT, console.log(PORT))
